@@ -1,12 +1,12 @@
-import { Phone } from "./Phone";
-
+import { Phone, brick } from "./Phone";
 
 export class PhoneService {   
     private phones: Phone[] | null = null;    
     private static me : PhoneService;
     constructor() {
-        const brick = <Phone>{  id:1, manufacturer: "Nokia", model: "3310" };
+        
         this.phones = [];
+        // add default phone to "database"
         this.phones[brick.id] =  brick ;
     }
 

@@ -2,6 +2,7 @@ import {
     Controller,
     Get,
     Post,
+    Path,
     Route,
     Body
   } from "tsoa";
@@ -13,15 +14,17 @@ import {
     @Get("/")
     public async getPhones() : Promise<Phone[]> {
         const phoneService: PhoneService = PhoneService.getPhoneService();
-        return phoneService.getAllPhones();
+        return await phoneService.getAllPhones();
     }
     @Post("/")
     public async createPhone(
         @Body() phone: Phone
     ) : Promise<Phone> {
         const phoneService: PhoneService = PhoneService.getPhoneService();
-        phoneService.addPhone(phone);
-        return phoneService.getPhone(phone.id);
+        await phoneService.addPhone(phone);
+        // send back what is in the database in case there is logic that changes it on saving
+        return await phoneService.getPhone(phone.id);
     } 
+
 
   }
