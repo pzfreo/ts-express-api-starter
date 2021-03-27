@@ -7,12 +7,11 @@
   "author": "Paul Fremantle <pzfreo@github.com>",
   "license": "Apache-2.0",
   "scripts": {
-    "start": "ts-node src/app.ts",
-    "dev": "nodemon --watch . --ext ts --exec \"ts-node src/app.ts\"",
+    "start": "tsoa routes; ts-node src/app.ts",
+    "dev": "nodemon --watch . --ext ts --exec \"tsoa routes; ts-node src/app.ts\"",
     "test": "newman run ex4-postman.json",
     "test-dev": "nodemon --watch . --ext ts --exec \"sleep 5 && newman run ex4-postman.json\"",
-    "build": "tsc",
-    "watch": "tsc --watch"
+    "build": "tsoa routes; tsc"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.19.0",
