@@ -15,7 +15,6 @@ const models: TsoaRoute.Models = {
             "id": {"dataType":"double","required":true},
             "manufacturer": {"dataType":"string","required":true},
             "model": {"dataType":"string","required":true},
-            "price": {"dataType":"double","required":true},
         },
         "additionalProperties": false,
     },
