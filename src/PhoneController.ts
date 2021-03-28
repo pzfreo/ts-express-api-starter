@@ -2,7 +2,6 @@ import {
     Controller,
     Get,
     Post,
-    Path,
     Route,
     Body
   } from "tsoa";
